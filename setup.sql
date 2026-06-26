@@ -1,0 +1,21 @@
+-- Run this in Azure SQL Query Editor
+
+CREATE TABLE Users (
+  id INT IDENTITY(1,1) PRIMARY KEY,
+  name NVARCHAR(100) NOT NULL,
+  email NVARCHAR(100) NOT NULL UNIQUE,
+  password NVARCHAR(255) NOT NULL
+);
+
+CREATE TABLE BusPasses (
+  id INT IDENTITY(1,1) PRIMARY KEY,
+  user_id INT NOT NULL,
+  route NVARCHAR(100) NOT NULL,
+  destination NVARCHAR(100) NOT NULL,
+  pass_type NVARCHAR(50) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  pass_number NVARCHAR(100) NOT NULL UNIQUE,
+  status NVARCHAR(20) DEFAULT 'active',
+  created_at DATETIME DEFAULT GETDATE(),
+  FOREIGN KEY (user_id) REFERENCES Users(id)
+);

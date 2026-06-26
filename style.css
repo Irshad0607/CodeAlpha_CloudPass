@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4ff;
+  color: #1a1a2e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  color: white;
+  padding: 16px 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+
+.btn-logout {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+
+.btn-logout:hover {
+  background: rgba(255,255,255,0.35);
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 0 16px;
+  width: 100%;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px 8px 0 0;
+  background: #c5cae9;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.tab.active {
+  background: #1565c0;
+  color: white;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px rgba(21, 101, 192, 0.1);
+  border-top: 4px solid #1565c0;
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: #1565c0;
+  margin-bottom: 20px;
+}
+
+/* INPUTS */
+input, select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1.5px solid #c5cae9;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border 0.2s;
+  background: #fafafa;
+}
+
+input:focus, select:focus {
+  border-color: #1565c0;
+  background: white;
+}
+
+/* BUTTONS */
+.btn-primary {
+  width: 100%;
+  padding: 13px;
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1.5px solid #1565c0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+  background: #bbdefb;
+}
+
+/* MESSAGES */
+.msg {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+.msg.success { color: #2e7d32; }
+.msg.error   { color: #c62828; }
+
+/* PASS CARD */
+.pass-card {
+  background: linear-gradient(135deg, #1565c0, #0d47a1);
+  color: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 14px;
+}
+
+.pass-card h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pass-number {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  background: rgba(255,255,255,0.15);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.pass-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 0.88rem;
+}
+
+.pass-grid div span {
+  display: block;
+  opacity: 0.7;
+  font-size: 0.78rem;
+  margin-bottom: 2px;
+}
+
+.pass-grid div strong {
+  font-size: 0.95rem;
+}
+
+.pass-status {
+  display: inline-block;
+  background: #4caf50;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 12px;
+  text-transform: uppercase;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #777;
+  font-size: 0.85rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .pass-grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    padding: 20px;
+  }
+}

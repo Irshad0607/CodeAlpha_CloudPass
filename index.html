@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CloudPass — Bus Pass System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">🚌 CloudPass</div>
+      <div class="user-info" id="userInfo" style="display:none">
+        <span id="welcomeMsg"></span>
+        <button onclick="logout()" class="btn-logout">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- AUTH SECTION -->
+    <section id="authSection">
+      <div class="tabs">
+        <button class="tab active" onclick="showTab('registerTab', this)">Register</button>
+        <button class="tab" onclick="showTab('loginTab', this)">Login</button>
+      </div>
+
+      <!-- Register -->
+      <div id="registerTab" class="card">
+        <h2>Create Account</h2>
+        <input type="text" id="regName" placeholder="Full Name" />
+        <input type="email" id="regEmail" placeholder="Email Address" />
+        <input type="password" id="regPassword" placeholder="Password" />
+        <button class="btn-primary" onclick="register()">Register</button>
+        <p class="msg" id="regMsg"></p>
+      </div>
+
+      <!-- Login -->
+      <div id="loginTab" class="card" style="display:none">
+        <h2>Login to Your Account</h2>
+        <input type="email" id="loginEmail" placeholder="Email Address" />
+        <input type="password" id="loginPassword" placeholder="Password" />
+        <button class="btn-primary" onclick="login()">Login</button>
+        <p class="msg" id="loginMsg"></p>
+      </div>
+    </section>
+
+    <!-- DASHBOARD SECTION -->
+    <section id="dashSection" style="display:none">
+
+      <!-- Apply Pass -->
+      <div class="card">
+        <h2>🎫 Apply for Bus Pass</h2>
+        <input type="text" id="route" placeholder="Route (e.g. Route 42)" />
+        <input type="text" id="destination" placeholder="Destination (e.g. City Center)" />
+        <select id="passType">
+          <option value="">-- Select Pass Type --</option>
+          <option value="student">Student Pass — ₹300</option>
+          <option value="monthly">Monthly Pass — ₹500</option>
+          <option value="quarterly">Quarterly Pass — ₹1200</option>
+        </select>
+        <button class="btn-primary" onclick="applyPass()">Apply Pass</button>
+        <p class="msg" id="applyMsg"></p>
+      </div>
+
+      <!-- View Pass -->
+      <div class="card">
+        <h2>📋 My Bus Passes</h2>
+        <button class="btn-secondary" onclick="viewPass()">Refresh Passes</button>
+        <div id="passContainer"></div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CloudPass &copy; 2025 — Hosted on Microsoft Azure</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
