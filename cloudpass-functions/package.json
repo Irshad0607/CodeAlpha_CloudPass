@@ -1,7 +1,7 @@
 {
   "name": "cloudpass-api",
   "version": "1.0.0",
-  "main": "src/functions/*.js",
+  "main": "src/index.js",
   "dependencies": {
     "@azure/functions": "^4.5.0",
     "@azure/cosmos": "^4.1.1"
